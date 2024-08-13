@@ -1,58 +1,14 @@
-# create-svelte
+# `waitForValue` Function
 
-Everything you need to build a Svelte library, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+## Overview
 
-Read more about creating a library [in the docs](https://kit.svelte.dev/docs/packaging).
+The `waitForValue` function is a TypeScript utility that allows you to wait for a value to be instantiated (i.e., to be not `undefined` or `null`). It repeatedly checks the value at specified intervals and resolves a promise when the value is set or rejects if an error occurs.
 
-## Creating a project
+This function is useful when you need to wait for asynchronous operations to complete or for values that are expected to be set at a later time.
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Features
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-Everything inside `src/lib` is part of your library, everything inside `src/routes` can be used as a showcase or preview app.
-
-## Building
-
-To build your library:
-
-```bash
-npm run package
-```
-
-To create a production version of your showcase app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
-
-## Publishing
-
-Go into the `package.json` and give your package the desired name through the `"name"` option. Also consider adding a `"license"` field and point it to a `LICENSE` file which you can create from a template (one popular option is the [MIT license](https://opensource.org/license/mit/)).
-
-To publish your library to [npm](https://www.npmjs.com):
-
-```bash
-npm publish
-```
+- **🔓 Generic Type Support**: Works with any type.
+- **⏱ Customizable Check Interval**: Define how frequently the function checks the value.
+- **🏁 Timeout Handling**: Specify a maximum wait time to prevent indefinite waiting.
+- **❌ Error Handling**: Properly handles and rejects the promise if an error occurs.
